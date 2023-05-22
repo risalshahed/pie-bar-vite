@@ -11,14 +11,30 @@ Chart.register (
     ArcElement,
     Tooltip,
     Legend
-)
+);
+
+function ourSeller(objects, props, sources, total) {
+    total = objects.length;
+    const soldBySource = objects.filter(object => object[props] === sources).length;
+    const sourcePercentage = Math.round( ( soldBySource / total ) * 100 );
+    return sourcePercentage;
+}
 
 const PieChart = () => {
     const products = useContext(DataContext);
     const totalProduct = products.length;
     // console.log(totalProduct);
     
-    const daraz = products.filter(product => product.seller_name === 'Daraz');
+    const daraz = ourSeller(products, 'seller_name', 'Daraz', totalProduct);
+    const bikroy = ourSeller(products, 'ad_category', 'Bikroy.com', totalProduct);
+    const pickaboo = ourSeller(products, 'seller_name', 'Pickaboo', totalProduct);
+
+    /* console.log('daraz', daraz);
+    console.log('bikroy', bikroy);
+    console.log('pickaboo', pickaboo); */
+
+
+    /* const daraz = products.filter(product => product.seller_name === 'Daraz');
     // console.log('Daraz', daraz.length);
     const soldByDaraz = daraz.length;
     const darazPercentage = Math.round( ( soldByDaraz / totalProduct ) * 100 );
@@ -32,13 +48,18 @@ const PieChart = () => {
     // console.log('Pickaboo', pickaboo.length);
     const soldByPickaboo = pickaboo.length;
     const pickabooPercentage = Math.round( ( soldByPickaboo / totalProduct ) * 100 );
+
+    console.log('daraz', daraz.length);
+    console.log('bikroy', bikroy.length);
+    console.log('pickaboo', pickaboo.length); */
     
     // data for pie chart
     const data = {
         labels: ['Daraz', 'Bikroy', 'Pickaboo'],
         datasets: [
             {
-                data: [darazPercentage, bikroyPercentage, pickabooPercentage],
+                // data: [darazPercentage, bikroyPercentage, pickabooPercentage],
+                data: [daraz, bikroy, pickaboo],
                 backgroundColor: ['#84AF27', '#0095A0', '#FFC239']
             }
         ]

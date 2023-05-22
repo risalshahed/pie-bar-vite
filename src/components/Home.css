@@ -7,8 +7,15 @@
     display: flex;
 }
 #titles h2 {
-    width: 50%;
     padding: 20px;
+}
+#src {
+    width: 40%;
+    border: 1px solid red;
+}
+#cndt {
+    width: 50%;
+    border: 1px solid red;
 }
 
 #pie {

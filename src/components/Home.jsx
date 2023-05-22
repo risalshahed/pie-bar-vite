@@ -5,8 +5,8 @@ const Home = () => {
     return (
         <>
             <div id='titles'>
-                <h2>Sources</h2>
-                <h2>Conditions</h2>
+                <h2 id='src'>Sources</h2>
+                <h2 id='cndt'>Conditions</h2>
             </div>
             <div className='home'>
                 <PieChart />

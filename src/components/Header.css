@@ -1,0 +1,38 @@
+header {
+    background-color: #0095A0;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 5rem;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+    column-gap: 5%;
+}
+
+header > div > div {
+    border: 1px solid red;
+}
+
+header input[type="text"] {
+    padding: 15px 25px;
+    background: transparent;
+    border: 1px solid #fff;
+    outline: none;
+}
+/* input:focus {
+    border: 1px solid #fff;
+} */
+header input[type="text"]::placeholder {
+    color: #fff;
+}
+header button {
+    background-color: #F7F5F2;
+    color: #0095A0;
+    width: 164px;
+    height: 54px;
+    padding: auto 35px;
+}

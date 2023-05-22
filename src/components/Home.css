@@ -1,0 +1,24 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#titles {
+    display: flex;
+}
+#titles h2 {
+    width: 50%;
+    padding: 20px;
+}
+
+#pie {
+    width: 30%;
+    border: 1px solid red;
+    padding: 20px;
+}
+
+#bar {
+    width: 50%;
+    border: 1px solid red;
+    padding: 20px;
+}
